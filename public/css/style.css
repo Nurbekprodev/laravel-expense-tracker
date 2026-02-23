@@ -1,0 +1,51 @@
+:root {
+    --primary-color:rgb(95, 188, 250);
+    --padding: 50px;
+    --max-width: 1200px;
+    --border-radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px var(--padding);
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+main {
+    padding: var(--padding);
+}
+
+.active-link {
+    background-color: gray;
+    
+    border-radius: var(--border-radius);
+}
