@@ -11,6 +11,7 @@
         <nav>
             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Dashboard</x-nav-link>
+            <x-nav-link href="/expenses" :active="request()->is('expenses')">Expenses</x-nav-link>
         </nav>
     </div>
 
