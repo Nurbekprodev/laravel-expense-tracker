@@ -11,5 +11,4 @@
             <strong>Date:</strong> {{$expense['date']}}
         </p>
     </div>
-
 </x-layout>

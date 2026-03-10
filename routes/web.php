@@ -14,7 +14,9 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/expenses', function () {
-    return view('expenses', ['expenses' => Expense::all()]);
+    $expenses = Expense::with('category')->simplePaginate(5);
+
+    return view('expenses', ['expenses' => $expenses]);
 });
 
 Route::get('/expenses/{id}', function ($id){

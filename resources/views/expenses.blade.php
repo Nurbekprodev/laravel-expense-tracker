@@ -22,7 +22,7 @@
                                 {{$expense['amount']}}
                             </a>
                         </td>                 
-                         <td>{{$expense['category']}}</td>
+                         <td>{{$expense['category_id']}}</td>
                          <td>{{$expense['description']}}</td>
                          <td>{{$expense['date']}}</td>
                      </tr>
@@ -32,4 +32,7 @@
         </table>
     </div>
    
+    <div>
+        {{$expenses->links()}}
+    </div>
 </x-layout>
