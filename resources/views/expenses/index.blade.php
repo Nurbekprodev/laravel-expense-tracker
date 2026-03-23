@@ -22,7 +22,7 @@
                                 {{$expense['amount']}}
                             </a>
                         </td>                 
-                         <td>{{$expense['category_id']}}</td>
+                         <td>{{$expense->category->name}}</td>
                          <td>{{$expense['description']}}</td>
                          <td>{{$expense['date']}}</td>
                      </tr>
@@ -32,7 +32,7 @@
         </table>
     </div>
    
-    <div>
+    <div class="pagination-container">
         {{$expenses->links()}}
     </div>
 </x-layout>

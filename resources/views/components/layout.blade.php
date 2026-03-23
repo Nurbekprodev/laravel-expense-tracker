@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <div>
+    <header >
         <nav>
-            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-            <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Dashboard</x-nav-link>
-            <x-nav-link href="/expenses" :active="request()->is('expenses')">Expenses</x-nav-link>
+            <div class="nav-links container">
+                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+                <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Dashboard</x-nav-link>
+                <x-nav-link href="/expenses" :active="request()->is('expenses')">Expenses</x-nav-link>
+            </div>
+            <div>
+                <x-button href="/expenses/create">Add Expense</x-button>
+            </div>
         </nav>
-    </div>
+    </header>
 
     <div class="container">
         <main>

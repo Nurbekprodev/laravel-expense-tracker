@@ -6,7 +6,7 @@
     <div class="expense-card">
         <p>
             <strong>Amount:</strong> {{$expense['amount']}} <br>
-            <strong>Category:</strong> {{$expense['category']}} <br>
+            <strong>Category:</strong> {{$expense->category->name}} <br>
             <strong>Description:</strong> {{$expense['description']}} <br>
             <strong>Date:</strong> {{$expense['date']}}
         </p>
