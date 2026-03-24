@@ -15,6 +15,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
+
 /* Navbar */
 nav {
     background-color: var(--primary-color);
@@ -32,7 +34,9 @@ nav a {
     padding: 10px;
 }
 
-nav a:hover {
+nav a:hover,
+.btn:hover,
+.delete-btn:hover {
     opacity: 0.8;
 }
 
@@ -58,10 +62,42 @@ main {
 }
 
 /* Button */
-.btn {
+.btn, .delete-btn {
     background-color: rgb(83, 107, 143);
     padding: 10px;
+    margin-top: 20px;
     border-radius: var(--border-radius);
+    color: white;
+    text-decoration: none;
+}
+
+.cancel-btn {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+/* Button container */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.btn-div {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
 }
 
 /* Expenses Table */

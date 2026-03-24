@@ -11,4 +11,9 @@
             <strong>Date:</strong> {{$expense['date']}}
         </p>
     </div>
+    <div style="padding-top: 15px; ">
+        <x-button href="/expenses/{{$expense->id}}/edit">
+            Edit Expense
+        </x-button>
+    </div>
 </x-layout>

@@ -21,8 +21,8 @@
                 </div>
 
                 <div>
-                    <a href="/expenses">cancel</a>
-                    <button type="submit">Save</button>
+                    <a href="/expenses" class="cancel-btn">cancel</a>
+                    <button type="submit" class="btn">Save</button>
                 </div>
             </form>
         </div>
