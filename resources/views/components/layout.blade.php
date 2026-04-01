@@ -16,13 +16,27 @@
                     <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Dashboard</x-nav-link>
                     <x-nav-link href="/expenses" :active="request()->is('expenses')">Expenses</x-nav-link>
                 </nav>
+                <div class="flex gap-4">
+                    @guest
+                        <x-nav-link href="/login"  :active="request()->is('login')">Login</x-nav-link>
+                        <x-nav-link href="/register"  :active="request()->is('register')">Register</x-nav-link>
+                    @endguest
+
+                    @auth 
+                        <form action="/logout" method="POST">
+                            @csrf 
+
+                            <x-form-button>Logout</x-form-button>
+                        </form>                     
+                    @endauth
+                </div>
             </div>
 
             <!-- Hero -->
-            <div class=" bg-blue-900 flex justify-center">
-                <div class="container flex items-center justify-between p-10">
-                    <div>
-                        <h1 class="text-white text-2xl">{{ $heading }}</h1>
+            <div class=" bg-gray-200  border-b-2 shadow-lg  flex justify-center">
+                <div class="container flex items-center justify-between p-10 ">
+                    <div >
+                        <h1 class="text-black text-2xl">{{ $heading }}</h1>
                     </div>
                     <div class="">
                         <div class="flex justify-end items-center container">            
@@ -37,7 +51,7 @@
     </header>
 
     <main>
-        <div>
+        <div class="mt-4">
             {{ $slot }}
         </div>
     </main>

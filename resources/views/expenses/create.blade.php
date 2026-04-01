@@ -9,35 +9,29 @@
                 @csrf
                 
                 <div class="mt-6  space-y-4">
-                    <label for="amount" class="block mb-4">Amount <br>
-                        <input type="number" placeholder="1000" name="amount" class="border rounded-md w-full p-2 bg-gray-100">
+                    <x-form-label for="amount" >Amount <br>
+                        <x-form-input type="number" placeholder="1000" name="amount" />
                         <div class="text-sm text-red-500">
-                            @error('amount')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="amount" />
                         </div>
-                    </label> <br>
-                    <label for="description" class="block mb-4">Description <br>
-                        <input type="text" name="description" placeholder="Transport..." class="border rounded-md w-full p-2 bg-gray-100" >
+                    </x-form-label> <br>
+                    <x-form-label for="description" >Description <br>
+                        <x-form-input type="text" name="description" placeholder="Transport..." />
                         <div class="text-sm text-red-500">
-                            @error('description')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="description" />
                         </div>
-                    </label> <br>
-                    <label for="date" class="block mb-4">Date <br>
-                        <input type="date" name="date" placeholder="2026-03-10" class="border rounded-md w-full p-2 bg-gray-100" >
+                    </x-form-label> <br>
+                    <x-form-label for="date" >Date <br>
+                        <x-form-input type="date" name="date" placeholder="2026-03-10" />
                         <div class="text-sm text-red-500">
-                            @error('date')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="date" />
                         </div>
-                    </label>
+                    </x-form-label>
                 </div>
                 
-                <div class="container flex justify-end gap-3 mt-8">
+                <div class="container flex justify-end gap-3 mt-4">
                     <a href="/expenses" class="p-2 hover:opacity-75">cancel</a>
-                    <button class="px-4 py-2 bg-blue-500 rounded text-white hover:bg-blue-600 transition">Save</button>
+                    <x-form-button>Save</x-form-button>
                 </div>
             </form>
 

@@ -9,51 +9,42 @@
                 @csrf
                 @method('PATCH')
                 <div class="mt-6  space-y-4">
-                    <label for="amount" class="block mb-4">Amount <br>
-                        <input 
+                    <x-form-label for="amount" >Amount <br>
+                        <x-form-input 
                             type="number"  
                             name="amount" 
-                            class="border  rounded-md w-full p-2 bg-gray-100"
-                            value="{{$expense->amount}}">
+                            value="{{$expense->amount}}"/>
                         <div class="text-sm text-red-500">
-                            @error('amount')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="amount"/>
                         </div>
-                    </label> <br>
-                    <label for="description" class="block mb-4">Description <br>
-                        <input 
+                    </x-form-label> <br>
+                    <x-form-label for="description" >Description <br>
+                        <x-form-input 
                             type="text" 
                             name="description" 
-                            class="border rounded-md w-full p-2 bg-gray-100" 
-                            value="{{$expense->description}}">
+                            value="{{$expense->description}}"/>
                         <div class="text-sm text-red-500">
-                            @error('description')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="description"/>
                         </div>
-                    </label> <br>
-                    <label for="date" class="block mb-4">Date <br>
-                        <input 
+                    </x-form-label> <br>
+                    <x-form-label for="date" >Date <br>
+                        <x-form-input 
                             type="date" 
                             name="date" 
-                            class="border rounded-md w-full p-2 bg-gray-100" 
-                            value="{{$expense->date}}">
+                            value="{{$expense->date}}"/>
                         <div class="text-sm text-red-500">
-                            @error('date')
-                                {{$message}}
-                            @enderror
+                            <x-form-error name="date"/>
                         </div>
-                    </label>
+                    </x-form-label>
                 </div>
 
-                <div class="flex justify-between items-center mt-8">
+                <div class="flex justify-between items-center mt-4">
                     <div class="">
                         <button class="p-2 hover:opacity-75 text-red-500" form="delete-form" onclick="return confirm('Delete this Expense?')">Delete</button>
                     </div>
                     <div>
                         <a href="/expenses/{{$expense->id}}" class="p-2 px-4 hover:opacity-75">cancel</a>
-                        <button class="px-4 py-2 bg-blue-500 rounded text-white hover:bg-blue-600 transition">Edit</button>
+                        <x-form-button >Edit</x-form-button>
                     </div>
                 </div>
 
