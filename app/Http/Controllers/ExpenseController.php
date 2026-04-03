@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Expense;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ExpenseController extends Controller
 {
@@ -42,8 +45,11 @@ class ExpenseController extends Controller
         return redirect('expenses');
     }
 
+    // Edit
     public function edit(Expense $expense)
     {
+      
+
         return view('expenses.edit', ['expense' => $expense]);
     }
 

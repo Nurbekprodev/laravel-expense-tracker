@@ -14,11 +14,13 @@
                 <p><span class="font-semibold">Date:</span> {{$expense->date}}</p>
             </div>
 
-            <div class="flex justify-end">
-                <a href="/expenses/{{$expense->id}}/edit" class="px-4 py-2 bg-blue-500 rounded text-white hover:bg-blue-600 transition">
-                    Edit Expense
-                </a>
-            </div>
+            @can('edit', $expense)
+                <div class="flex justify-end">
+                    <a href="/expenses/{{$expense->id}}/edit" class="px-4 py-2 bg-blue-500 rounded text-white hover:bg-blue-600 transition">
+                        Edit Expense
+                    </a>
+                </div>
+            @endcan
 
         </div>
     </div>

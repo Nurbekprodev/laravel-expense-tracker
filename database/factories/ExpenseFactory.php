@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,10 @@ class ExpenseFactory extends Factory
     public function definition(): array
     {
         return [
-            'amount' => fake()->numberBetween(1000, 50000),
+         
             'category_id' => Category::factory(),
+            'user_id' => User::factory(),
+            'amount' => fake()->numberBetween(1000, 50000),
             'description' => fake()->sentence(3),
             'date' => fake()->date(),
         ];

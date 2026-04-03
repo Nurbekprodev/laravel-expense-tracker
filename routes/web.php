@@ -11,14 +11,26 @@ Route::view('/', 'home');
 
 Route::view('/dashboard', 'dashboard');
 
-Route::resource('expenses', ExpenseController::class);
+
+Route::get('/expenses', [ExpenseController::class, 'index']);
+Route::get('/expenses/create', [ExpenseController::class, 'create']);
+Route::get('/expenses/{expense}', [ExpenseController::class, 'show']);
+Route::post('/expenses', [ExpenseController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('/expenses/{expense}/edit', [ExpenseController::class, 'edit'])
+    ->middleware('auth')
+    ->can('edit', 'expense');
+
+Route::patch('/expenses/{expense}', [ExpenseController::class, 'update']);
+Route::delete('/expenses/{expense}', [ExpenseController::class, 'destroy']);
 
 // auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 
-Route::get('/login', [LoginController::class, 'create']);
+Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'destroy']);
 
